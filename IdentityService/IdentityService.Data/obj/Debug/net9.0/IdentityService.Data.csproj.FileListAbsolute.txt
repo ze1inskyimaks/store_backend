@@ -1,0 +1,14 @@
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Data\bin\Debug\net9.0\IdentityService.Data.deps.json
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Data\bin\Debug\net9.0\IdentityService.Data.dll
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Data\bin\Debug\net9.0\IdentityService.Data.pdb
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Data\obj\Debug\net9.0\IdentityService.Data.csproj.AssemblyReference.cache
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Data\obj\Debug\net9.0\IdentityService.Data.GeneratedMSBuildEditorConfig.editorconfig
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Data\obj\Debug\net9.0\IdentityService.Data.AssemblyInfoInputs.cache
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Data\obj\Debug\net9.0\IdentityService.Data.AssemblyInfo.cs
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Data\obj\Debug\net9.0\IdentityService.Data.csproj.CoreCompileInputs.cache
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Data\obj\Debug\net9.0\IdentityService.Data.dll
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Data\obj\Debug\net9.0\refint\IdentityService.Data.dll
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Data\obj\Debug\net9.0\IdentityService.Data.pdb
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Data\obj\Debug\net9.0\ref\IdentityService.Data.dll
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Data\bin\Debug\net9.0\IdentityService.Data.runtimeconfig.json
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Data\obj\Debug\net9.0\IdentityService.Data.genruntimeconfig.cache

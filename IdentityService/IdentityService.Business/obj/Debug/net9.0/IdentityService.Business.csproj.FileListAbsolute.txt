@@ -1,0 +1,17 @@
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\bin\Debug\net9.0\IdentityService.Business.deps.json
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\bin\Debug\net9.0\IdentityService.Business.dll
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\bin\Debug\net9.0\IdentityService.Business.pdb
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\bin\Debug\net9.0\IdentityService.Data.dll
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\bin\Debug\net9.0\IdentityService.Data.pdb
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\obj\Debug\net9.0\IdentityService.Business.csproj.AssemblyReference.cache
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\obj\Debug\net9.0\IdentityService.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\obj\Debug\net9.0\IdentityService.Business.AssemblyInfoInputs.cache
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\obj\Debug\net9.0\IdentityService.Business.AssemblyInfo.cs
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\obj\Debug\net9.0\IdentityService.Business.csproj.CoreCompileInputs.cache
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\obj\Debug\net9.0\Identity.E909EEFF.Up2Date
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\obj\Debug\net9.0\IdentityService.Business.dll
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\obj\Debug\net9.0\refint\IdentityService.Business.dll
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\obj\Debug\net9.0\IdentityService.Business.pdb
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\obj\Debug\net9.0\ref\IdentityService.Business.dll
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\bin\Debug\net9.0\IdentityService.Business.runtimeconfig.json
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\obj\Debug\net9.0\IdentityService.Business.genruntimeconfig.cache
