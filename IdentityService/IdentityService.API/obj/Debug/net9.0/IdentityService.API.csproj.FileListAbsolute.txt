@@ -161,3 +161,4 @@ C:\Storage\BackEnd\Store\IdentityService\IdentityService.API\bin\Debug\net9.0\ru
 C:\Storage\BackEnd\Store\IdentityService\IdentityService.API\bin\Debug\net9.0\tr\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Storage\BackEnd\Store\IdentityService\IdentityService.API\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Storage\BackEnd\Store\IdentityService\IdentityService.API\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.API\obj\Debug\net9.0\IdentityService.API.sourcelink.json

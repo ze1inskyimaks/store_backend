@@ -15,3 +15,4 @@ C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\obj\Debug\net9
 C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\obj\Debug\net9.0\ref\IdentityService.Business.dll
 C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\bin\Debug\net9.0\IdentityService.Business.runtimeconfig.json
 C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\obj\Debug\net9.0\IdentityService.Business.genruntimeconfig.cache
+C:\Storage\BackEnd\Store\IdentityService\IdentityService.Business\obj\Debug\net9.0\IdentityService.Business.sourcelink.json

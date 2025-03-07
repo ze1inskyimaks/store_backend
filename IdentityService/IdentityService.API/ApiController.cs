@@ -49,7 +49,7 @@ public class ApiController : ControllerBase
         return Ok();
     }
     
-    [Authorize]
+    [Authorize(Roles = "USER")]
     [HttpGet("userinfo")]
     public IActionResult TakeSecretInfo()
     {
