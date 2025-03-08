@@ -11,13 +11,6 @@ public class AppDbContext : IdentityDbContext<Account>
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<Account>(entity =>
-        {
-            entity.Property(e => e.FullName)
-                .IsRequired()
-                .HasMaxLength(120);
-        });
-        
         modelBuilder.Entity<IdentityUserLogin<string>>(entity =>
         {
             entity.HasKey(e => new { e.LoginProvider, e.ProviderKey });

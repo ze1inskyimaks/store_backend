@@ -30,7 +30,8 @@ public class JwtService
         var claims = new List<Claim>
         {
             new Claim(ClaimTypes.NameIdentifier, account.Id.ToString()),
-            new Claim(ClaimTypes.Name, account.UserName!)
+            new Claim(ClaimTypes.Name, account.UserName!),
+            new Claim(ClaimTypes.Email, account.Email!)
         };
 
         // Отримуємо всі клейми, які має користувач (якщо вони є)

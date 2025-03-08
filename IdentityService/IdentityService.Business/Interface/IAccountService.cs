@@ -6,5 +6,6 @@ namespace IdentityService.Business.Interface;
 public interface IAccountService
 {
     public Task<string?> Login(AccountDTO accountDto);
-    public Task Register(AccountDTO accountDto); 
+    public Task Register(AccountDTO accountDto);
+    //public Task AddRole(string role);
 }

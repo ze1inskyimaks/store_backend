@@ -9,7 +9,7 @@ public static class AccountMapping
     {
         var model = new Account()
         {
-            FullName = accountDto.FullName,
+            Email = accountDto.Email,
             UserName = accountDto.UserName
         };
 
@@ -21,7 +21,7 @@ public static class AccountMapping
         var dto = new AccountDTO()
         {
             Id = long.TryParse(account.Id, out var id) ? id : null,
-            FullName = account.FullName,
+            Email = account.Email!,
             UserName = account.UserName!
         };
 

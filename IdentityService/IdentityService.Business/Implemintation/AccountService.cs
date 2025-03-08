@@ -22,7 +22,7 @@ public class AccountService : IAccountService
     public async Task<string?> Login(AccountDTO accountDto)
     {
         // Знайти користувача за його ім'ям
-        var acc = await _userManager.FindByNameAsync(accountDto.UserName);
+        var acc = await _userManager.FindByEmailAsync(accountDto.UserName);
         if (acc == null)
         {
             throw new Exception("User indefinite!");
@@ -40,9 +40,9 @@ public class AccountService : IAccountService
 
     public async Task Register(AccountDTO accountDto)
     {
-        if (await _userManager.FindByNameAsync(accountDto.UserName) != null)
+        if (await _userManager.FindByEmailAsync(accountDto.UserName) != null)
         {
-            throw new Exception("Користувач із таким ім’ям вже існує.");
+            throw new Exception("Користувач із таким емейлом вже існує.");
         }
         
         var account = AccountMapping.ToModel(accountDto);
@@ -50,20 +50,28 @@ public class AccountService : IAccountService
         var result = await _userManager.CreateAsync(account, accountDto.PasswordHash);
         if (!result.Succeeded)
         {
-            throw new Exception("Не вдалося створити користувача: " + string.Join(", ", result.Errors.Select(e => e.Description)));
+            throw new Exception("Не вдалося створити користувача: " +
+                                string.Join(", ", result.Errors.Select(e => e.Description)));
         }
 
-        /*var roleExist = await _roleManager.RoleExistsAsync("USER");
-        if (!roleExist)
-        {
-            // Якщо роль не існує, створюємо її
-            var roleResult = await _roleManager.CreateAsync(new IdentityRole("USER"));
-            if (!roleResult.Succeeded)
-            {
-                throw new Exception("Херня вийшла");
-            }
-        }*/
-        
         await _userManager.AddToRoleAsync(account, "USER");
     }
+
+    /*public async Task AddRole(string role)
+    {
+        role = role.ToUpper();
+        var roleExist = await _roleManager.RoleExistsAsync(role);
+        if (!roleExist)
+        {
+            var roleResult = await _roleManager.CreateAsync(new IdentityRole(role));
+            if (!roleResult.Succeeded)
+            {
+                throw new Exception("Не вдалося створити роль " + roleResult.Errors.Select(e => e.Description));
+            }
+        }
+        else
+        {
+            throw new Exception("Role has already been created!");
+        }
+    }*/
 }
