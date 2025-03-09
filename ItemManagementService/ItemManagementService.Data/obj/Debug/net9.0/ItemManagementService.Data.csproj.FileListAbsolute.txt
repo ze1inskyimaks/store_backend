@@ -10,3 +10,6 @@ C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Data\obj\De
 C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Data\obj\Debug\net9.0\refint\ItemManagementService.Data.dll
 C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Data\obj\Debug\net9.0\ItemManagementService.Data.pdb
 C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Data\obj\Debug\net9.0\ref\ItemManagementService.Data.dll
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Data\bin\Debug\net9.0\ItemManagementService.Data.runtimeconfig.json
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Data\obj\Debug\net9.0\ItemManagementService.Data.csproj.AssemblyReference.cache
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Data\obj\Debug\net9.0\ItemManagementService.Data.genruntimeconfig.cache
