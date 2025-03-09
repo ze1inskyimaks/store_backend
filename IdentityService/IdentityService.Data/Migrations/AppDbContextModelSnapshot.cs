@@ -39,11 +39,6 @@ namespace IdentityService.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasMaxLength(120)
-                        .HasColumnType("nvarchar(120)");
-
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 

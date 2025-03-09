@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "Sy5RSqdiApS3XkFT+Wd7Nk7rVdGu6QTMFlJxJCR8g1s=",
+  "Source": "ItemManagementService.API",
+  "BasePath": "_content/ItemManagementService.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

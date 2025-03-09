@@ -1,0 +1,16 @@
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\bin\Debug\net9.0\ItemManagementService.Business.deps.json
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\bin\Debug\net9.0\ItemManagementService.Business.dll
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\bin\Debug\net9.0\ItemManagementService.Business.pdb
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\bin\Debug\net9.0\ItemManagementService.Data.dll
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\bin\Debug\net9.0\ItemManagementService.Data.pdb
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\obj\Debug\net9.0\ItemManagementService.Business.csproj.AssemblyReference.cache
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\obj\Debug\net9.0\ItemManagementService.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\obj\Debug\net9.0\ItemManagementService.Business.AssemblyInfoInputs.cache
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\obj\Debug\net9.0\ItemManagementService.Business.AssemblyInfo.cs
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\obj\Debug\net9.0\ItemManagementService.Business.csproj.CoreCompileInputs.cache
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\obj\Debug\net9.0\ItemManagementService.Business.sourcelink.json
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\obj\Debug\net9.0\ItemMana.E26E8F0E.Up2Date
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\obj\Debug\net9.0\ItemManagementService.Business.dll
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\obj\Debug\net9.0\refint\ItemManagementService.Business.dll
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\obj\Debug\net9.0\ItemManagementService.Business.pdb
+C:\Storage\BackEnd\Store\ItemManagementService\ItemManagementService.Business\obj\Debug\net9.0\ref\ItemManagementService.Business.dll

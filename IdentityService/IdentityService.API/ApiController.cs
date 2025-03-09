@@ -48,10 +48,26 @@ public class ApiController : ControllerBase
         await _accountService.Register(accountDto);
         return Ok();
     }
+
+    [Authorize(Roles = "ADMIN")]
+    [HttpPost("add_role")]
+    public async Task<IActionResult> SetRoleForUser(string id, string role)
+    {
+        await _accountService.AddRoleToAccount(id, role);
+        return Ok();
+    }
+
+    [Authorize(Roles = "ADMIN")]
+    [HttpDelete("remove_role")]
+    public async Task<IActionResult> RemoveRoleForUser(string id, string role)
+    {
+        await _accountService.RemoveRoleToAccount(id, role);
+        return Ok();
+    }
     
     [Authorize(Roles = "USER")]
-    [HttpGet("userinfo")]
-    public IActionResult TakeSecretInfo()
+    [HttpGet("userinfouser")]
+    public IActionResult TakeSecretInfoUser()
     {
         var roles = User.FindAll(ClaimTypes.Role).Select(r => r.Value).ToList();
 
@@ -60,6 +76,20 @@ public class ApiController : ControllerBase
             return Unauthorized();
         }
 
-        return Ok("Secret info");
+        return Ok("Secret info for User");
+    }
+    
+    [Authorize(Roles = "ADMIN")] //працю лише після оновлення jwt токена користувачем
+    [HttpGet("userinfoadmin")]
+    public IActionResult TakeSecretInfoAdmin()
+    {
+        var roles = User.FindAll(ClaimTypes.Role).Select(r => r.Value).ToList();
+
+        if (!roles.Contains("ADMIN"))
+        {
+            return Unauthorized();
+        }
+
+        return Ok("Secret info for Admin");
     }
 }

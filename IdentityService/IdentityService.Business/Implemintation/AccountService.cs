@@ -22,7 +22,7 @@ public class AccountService : IAccountService
     public async Task<string?> Login(AccountDTO accountDto)
     {
         // Знайти користувача за його ім'ям
-        var acc = await _userManager.FindByEmailAsync(accountDto.UserName);
+        var acc = await _userManager.FindByEmailAsync(accountDto.Email);
         if (acc == null)
         {
             throw new Exception("User indefinite!");
@@ -40,7 +40,7 @@ public class AccountService : IAccountService
 
     public async Task Register(AccountDTO accountDto)
     {
-        if (await _userManager.FindByEmailAsync(accountDto.UserName) != null)
+        if (await _userManager.FindByEmailAsync(accountDto.Email) != null)
         {
             throw new Exception("Користувач із таким емейлом вже існує.");
         }
@@ -57,6 +57,42 @@ public class AccountService : IAccountService
         await _userManager.AddToRoleAsync(account, "USER");
     }
 
+    public async Task AddRoleToAccount(string id, string role)
+    {
+        role = role.ToUpper();
+        var roleExist = await _roleManager.RoleExistsAsync(role);
+        if (!roleExist)
+        {
+            throw new Exception("Не вдалося знайти роль " + role);
+        }
+
+        var acc = await _userManager.FindByIdAsync(id);
+        if (acc == null)
+        {
+            throw new Exception("Account not been found!");
+        }
+        
+        await _userManager.AddToRoleAsync(acc, role);
+    }
+    
+    public async Task RemoveRoleToAccount(string id, string role)
+    {
+        role = role.ToUpper();
+        var roleExist = await _roleManager.RoleExistsAsync(role);
+        if (!roleExist)
+        {
+            throw new Exception("Не вдалося знайти роль " + role);
+        }
+
+        var acc = await _userManager.FindByIdAsync(id);
+        if (acc == null)
+        {
+            throw new Exception("Account not been found!");
+        }
+        
+        await _userManager.RemoveFromRoleAsync(acc, role);
+    }
+    
     /*public async Task AddRole(string role)
     {
         role = role.ToUpper();
