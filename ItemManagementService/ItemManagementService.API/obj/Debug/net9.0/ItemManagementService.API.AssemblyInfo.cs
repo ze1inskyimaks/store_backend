@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ItemManagementService.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bcf947dfaa004bb59c0c465875bda5e16e259d72")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b86ea10767d8d09aed3d173e5f0bbcbbf51855b1")]
 [assembly: System.Reflection.AssemblyProductAttribute("ItemManagementService.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ItemManagementService.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

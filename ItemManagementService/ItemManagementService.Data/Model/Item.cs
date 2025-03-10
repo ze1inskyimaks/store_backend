@@ -13,6 +13,6 @@ public class Item
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 
-    public ICollection<Category>? Categories { get; set; }
-    public ICollection<Company>? Companies { get; set; }
+    public Category? Categories { get; set; }
+    public Company Companies { get; set; } = null!;
 }
