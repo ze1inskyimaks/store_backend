@@ -1,6 +1,11 @@
-﻿namespace ItemManagementService.Business.Interface;
+﻿using ItemManagementService.Business.ModelDto.Item;
 
-public class IItemService
+namespace ItemManagementService.Business.Interface;
+
+public interface IItemService
 {
-    
+    public Task CreateItem(ItemInputDto itemInputDto, long companyId);
+    public Task DeleteItemById(long id);
+    public Task ChangeItem(long id, ItemInputDto itemInputDto);
+    public Task<ItemOutputDto?> GetItem(long id);
 }

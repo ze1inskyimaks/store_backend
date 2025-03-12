@@ -38,12 +38,8 @@ public class ItemRepository : IItemRepository
 
     public async Task ChangeItem(Item item)
     {
-        var currentItem = await _context.Items.FindAsync(item.Id);
-        if (currentItem != null)
-        {
-            _context.Items.Attach(currentItem).CurrentValues.SetValues(item);
-            await _context.SaveChangesAsync();
-        }
+        _context.Items.Update(item);
+        await _context.SaveChangesAsync();
     }
 
     public async Task<Item?> GetItemById(long id)

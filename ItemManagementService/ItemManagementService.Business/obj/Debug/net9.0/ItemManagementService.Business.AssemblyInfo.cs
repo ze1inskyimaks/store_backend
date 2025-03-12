@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ItemManagementService.Business")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b86ea10767d8d09aed3d173e5f0bbcbbf51855b1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5de6a1e2ae3a8b75936eca208ace04ce11564554")]
 [assembly: System.Reflection.AssemblyProductAttribute("ItemManagementService.Business")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ItemManagementService.Business")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
