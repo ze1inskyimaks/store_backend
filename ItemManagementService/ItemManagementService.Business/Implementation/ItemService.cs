@@ -7,23 +7,31 @@ namespace ItemManagementService.Business.Implementation;
 public class ItemService : IItemService
 {
     private readonly IItemRepository _itemRepository;
+    private readonly ICompanyService _companyService;
+    private readonly ICategoryRepository _categoryRepository;
 
-    public ItemService(IItemRepository itemRepository)
+    public ItemService(IItemRepository itemRepository, ICompanyService companyService, ICategoryRepository categoryRepository)
     {
         _itemRepository = itemRepository;
+        _companyService = companyService;
+        _categoryRepository = categoryRepository;
     }
     
-    public async Task CreateItem(ItemInputDto itemInputDto, long companyId)
+    public async Task CreateItem(ItemInputDto itemInputDto)
     {
         var item = ItemMapping.DoModelFromInputDto(itemInputDto);
-        if (0 > companyId)
-        {
-            throw new Exception("Error with company id");
-        }
-
-        //Categories and companies also
         
-        item.CompanyId = companyId;
+        if (itemInputDto.CategoryId.HasValue)
+        {
+            var category = await _categoryRepository.GetCategoryById(itemInputDto.CategoryId.Value);
+            item.CategoryId = itemInputDto.CategoryId;
+            item.Categories = category;
+        }
+        
+        var company = await _companyService.GetCompanyById(itemInputDto.CompanyId);
+        
+        item.CompanyId = itemInputDto.CompanyId;
+        item.Companies = company!;
         
         await _itemRepository.CreateItem(item);
     }

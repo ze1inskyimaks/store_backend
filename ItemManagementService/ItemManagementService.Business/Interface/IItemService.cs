@@ -4,7 +4,7 @@ namespace ItemManagementService.Business.Interface;
 
 public interface IItemService
 {
-    public Task CreateItem(ItemInputDto itemInputDto, long companyId);
+    public Task CreateItem(ItemInputDto itemInputDto);
     public Task DeleteItemById(long id);
     public Task ChangeItem(long id, ItemInputDto itemInputDto);
     public Task<ItemOutputDto?> GetItem(long id);
