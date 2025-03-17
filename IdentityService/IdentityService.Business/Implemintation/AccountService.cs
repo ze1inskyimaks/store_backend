@@ -1,6 +1,7 @@
 ﻿using IdentityService.Business.Interface;
 using IdentityService.Business.Mapping;
 using IdentityService.Business.Models.DTO;
+using IdentityService.Business.RabbitMq;
 using IdentityService.Data.Models;
 using Microsoft.AspNetCore.Identity;
 
@@ -11,12 +12,14 @@ public class AccountService : IAccountService
     private readonly UserManager<Account> _userManager;
     private readonly JwtService _jwtService;
     private readonly RoleManager<IdentityRole> _roleManager;
+    private readonly CompanyCreatedProducer _createdProducer;
 
-    public AccountService(UserManager<Account> userManager, JwtService jwtService, RoleManager<IdentityRole> roleManager)
+    public AccountService(UserManager<Account> userManager, JwtService jwtService, RoleManager<IdentityRole> roleManager, CompanyCreatedProducer createdProducer)
     {
         _userManager = userManager;
         _jwtService = jwtService;
         _roleManager = roleManager;
+        _createdProducer = createdProducer;
     }
     
     public async Task<string?> Login(AccountDTO accountDto)
@@ -55,6 +58,7 @@ public class AccountService : IAccountService
         }
 
         await _userManager.AddToRoleAsync(account, "USER");
+        _createdProducer.SendCompanyCreatedMessage(account.Id);
     }
 
     public async Task AddRoleToAccount(string id, string role)

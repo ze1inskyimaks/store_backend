@@ -1,13 +1,12 @@
 ﻿using System.Text;
 using IdentityService.Business.Implemintation;
 using IdentityService.Business.Interface;
+using IdentityService.Business.RabbitMq;
 using IdentityService.Data;
 using IdentityService.Data.Models;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 
 namespace IdentityService.Extensions;
@@ -23,6 +22,8 @@ public static class ServiceExtensions
         // 🔹 Реєстрація Scoped сервісів
         services.AddScoped<IAccountService, AccountService>();
         services.AddScoped<JwtService>();
+        services.AddSingleton<CompanyCreatedProducer>();
+
 
         // 🔹 Налаштування БД
         var connectionString = configuration.GetConnectionString("DefaultConnection");

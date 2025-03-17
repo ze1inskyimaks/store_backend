@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using ItemManagementService.Business.RabbitMq;
 using ItemManagementService.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -15,11 +16,15 @@ public static class ServiceExtensions
         services.AddSwaggerGen();
 
         // 🔹 Реєстрація Scoped сервісів
+        services.AddHostedService<CompanyRabbitConsumer>();
 
+        
         // 🔹 Налаштування БД
         var connectionString = configuration.GetConnectionString("DefaultConnection");
         services.AddDbContext<ApplicationDbContext>(options =>
             options.UseSqlServer(connectionString));
+        
+        
         
         // 🔹 Налаштування автентифікації та JWT
         services.AddAuthentication(options =>
