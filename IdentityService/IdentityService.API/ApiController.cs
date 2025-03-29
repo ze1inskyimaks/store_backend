@@ -43,9 +43,9 @@ public class ApiController : ControllerBase
     }
     
     [HttpPost("register")]
-    public async Task<IActionResult> Register([FromBody]AccountDTO accountDto)
+    public async Task<IActionResult> Register([FromBody]AccountDTO accountDto, uint role = default)
     {
-        await _accountService.Register(accountDto);
+        await _accountService.Register(accountDto, role);
         return Ok();
     }
 

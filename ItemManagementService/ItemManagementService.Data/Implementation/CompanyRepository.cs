@@ -24,12 +24,12 @@ public class CompanyRepository : ICompanyRepository
         await _context.SaveChangesAsync();
     }
 
-    public async Task<Company?> GetCompanyById(long id)
+    public async Task<Company?> GetCompanyById(string id)
     {
         return await _context.Companies.FindAsync(id);
     }
 
-    public async Task<List<Item>?> GetAllItemByCompanies(long id)
+    public async Task<List<Item>?> GetAllItemByCompanies(string id)
     {
         var company = await _context.Companies.FindAsync(id);
         if (company == null)

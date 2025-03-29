@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ItemManagementService.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20250309191607_InitialCreate")]
+    [Migration("20250329154655_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -24,36 +24,6 @@ namespace ItemManagementService.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("CategoryItem", b =>
-                {
-                    b.Property<long>("CategoriesId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("ItemsId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("CategoriesId", "ItemsId");
-
-                    b.HasIndex("ItemsId");
-
-                    b.ToTable("CategoryItem");
-                });
-
-            modelBuilder.Entity("CompanyItem", b =>
-                {
-                    b.Property<long>("CompaniesId")
-                        .HasColumnType("bigint");
-
-                    b.Property<long>("ItemsId")
-                        .HasColumnType("bigint");
-
-                    b.HasKey("CompaniesId", "ItemsId");
-
-                    b.HasIndex("ItemsId");
-
-                    b.ToTable("CompanyItem");
-                });
 
             modelBuilder.Entity("ItemManagementService.Data.Model.Category", b =>
                 {
@@ -75,11 +45,8 @@ namespace ItemManagementService.Data.Migrations
 
             modelBuilder.Entity("ItemManagementService.Data.Model.Company", b =>
                 {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
@@ -97,8 +64,9 @@ namespace ItemManagementService.Data.Migrations
                     b.Property<long?>("CategoryId")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("CompanyId")
-                        .HasColumnType("bigint");
+                    b.Property<string>("CompanyId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
@@ -131,37 +99,38 @@ namespace ItemManagementService.Data.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("CompanyId");
+
                     b.ToTable("Items");
                 });
 
-            modelBuilder.Entity("CategoryItem", b =>
+            modelBuilder.Entity("ItemManagementService.Data.Model.Item", b =>
                 {
-                    b.HasOne("ItemManagementService.Data.Model.Category", null)
-                        .WithMany()
-                        .HasForeignKey("CategoriesId")
+                    b.HasOne("ItemManagementService.Data.Model.Category", "Categories")
+                        .WithMany("Items")
+                        .HasForeignKey("CategoryId");
+
+                    b.HasOne("ItemManagementService.Data.Model.Company", "Companies")
+                        .WithMany("Items")
+                        .HasForeignKey("CompanyId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ItemManagementService.Data.Model.Item", null)
-                        .WithMany()
-                        .HasForeignKey("ItemsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Categories");
+
+                    b.Navigation("Companies");
                 });
 
-            modelBuilder.Entity("CompanyItem", b =>
+            modelBuilder.Entity("ItemManagementService.Data.Model.Category", b =>
                 {
-                    b.HasOne("ItemManagementService.Data.Model.Company", null)
-                        .WithMany()
-                        .HasForeignKey("CompaniesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Navigation("Items");
+                });
 
-                    b.HasOne("ItemManagementService.Data.Model.Item", null)
-                        .WithMany()
-                        .HasForeignKey("ItemsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+            modelBuilder.Entity("ItemManagementService.Data.Model.Company", b =>
+                {
+                    b.Navigation("Items");
                 });
 #pragma warning restore 612, 618
         }

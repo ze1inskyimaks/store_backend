@@ -2,5 +2,5 @@
 
 public class CompanyDto
 {
-    public long Id { get; set; }
+    public string Id { get; set; }
 }

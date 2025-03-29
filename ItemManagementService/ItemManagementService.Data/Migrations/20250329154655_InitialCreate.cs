@@ -28,8 +28,7 @@ namespace ItemManagementService.Data.Migrations
                 name: "Companies",
                 columns: table => new
                 {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1")
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -48,91 +47,48 @@ namespace ItemManagementService.Data.Migrations
                     StockQuantity = table.Column<int>(type: "int", nullable: false),
                     Status = table.Column<int>(type: "int", nullable: false),
                     CategoryId = table.Column<long>(type: "bigint", nullable: true),
-                    CompanyId = table.Column<long>(type: "bigint", nullable: false),
+                    CompanyId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()"),
                     UpdatedAt = table.Column<DateTime>(type: "datetime2", nullable: false, defaultValueSql: "GETUTCDATE()")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Items", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CategoryItem",
-                columns: table => new
-                {
-                    CategoriesId = table.Column<long>(type: "bigint", nullable: false),
-                    ItemsId = table.Column<long>(type: "bigint", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CategoryItem", x => new { x.CategoriesId, x.ItemsId });
                     table.ForeignKey(
-                        name: "FK_CategoryItem_Categories_CategoriesId",
-                        column: x => x.CategoriesId,
+                        name: "FK_Items_Categories_CategoryId",
+                        column: x => x.CategoryId,
                         principalTable: "Categories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_CategoryItem_Items_ItemsId",
-                        column: x => x.ItemsId,
-                        principalTable: "Items",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CompanyItem",
-                columns: table => new
-                {
-                    CompaniesId = table.Column<long>(type: "bigint", nullable: false),
-                    ItemsId = table.Column<long>(type: "bigint", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CompanyItem", x => new { x.CompaniesId, x.ItemsId });
-                    table.ForeignKey(
-                        name: "FK_CompanyItem_Companies_CompaniesId",
-                        column: x => x.CompaniesId,
+                        name: "FK_Items_Companies_CompanyId",
+                        column: x => x.CompanyId,
                         principalTable: "Companies",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_CompanyItem_Items_ItemsId",
-                        column: x => x.ItemsId,
-                        principalTable: "Items",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_CategoryItem_ItemsId",
-                table: "CategoryItem",
-                column: "ItemsId");
+                name: "IX_Items_CategoryId",
+                table: "Items",
+                column: "CategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_CompanyItem_ItemsId",
-                table: "CompanyItem",
-                column: "ItemsId");
+                name: "IX_Items_CompanyId",
+                table: "Items",
+                column: "CompanyId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "CategoryItem");
-
-            migrationBuilder.DropTable(
-                name: "CompanyItem");
+                name: "Items");
 
             migrationBuilder.DropTable(
                 name: "Categories");
 
             migrationBuilder.DropTable(
                 name: "Companies");
-
-            migrationBuilder.DropTable(
-                name: "Items");
         }
     }
 }

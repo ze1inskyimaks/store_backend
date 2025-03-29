@@ -14,7 +14,7 @@ public class CompanyService : ICompanyService
         _companyRepository = companyRepository;
     }
     
-    public async Task CreateCompany(long id)
+    public async Task CreateCompany(string id)
     {
         var company = new Company()
         {
@@ -23,7 +23,7 @@ public class CompanyService : ICompanyService
         await _companyRepository.CreateCompany(company);
     }
 
-    public async Task DeleteCompany(long id)
+    public async Task DeleteCompany(string id)
     {
         var company = await _companyRepository.GetCompanyById(id);
         if (company == null)
@@ -33,12 +33,12 @@ public class CompanyService : ICompanyService
         await _companyRepository.DeleteCompany(company);
     }
 
-    public async Task<Company?> GetCompanyById(long id)
+    public async Task<Company?> GetCompanyById(string id)
     {
         return await _companyRepository.GetCompanyById(id);
     }
 
-    public async Task<List<ItemOutputDto>?> GetAllItemByCompanies(long id)
+    public async Task<List<ItemOutputDto>?> GetAllItemByCompanies(string id)
     {
         var result = await _companyRepository.GetAllItemByCompanies(id);
         return result?.Select(ItemMapping.DoOutputDtoFromItem).ToList();

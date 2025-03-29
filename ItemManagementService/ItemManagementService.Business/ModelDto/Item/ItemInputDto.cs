@@ -19,6 +19,7 @@ public class ItemInputDto
     public int StockQuantity { get; set; }
     public Status Status { get; set; } = Status.Available;
     public long? CategoryId { get; set; }
+
     [Required(ErrorMessage = "Company required")]
-    public long CompanyId { get; set; }
+    public string CompanyId { get; set; } = null!;
 }

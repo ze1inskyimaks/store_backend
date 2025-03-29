@@ -18,8 +18,8 @@ public class ItemOutputDto
     public Status Status { get; set; } = Status.Available;
     
     public long? CategoryId { get; set; }
-    
-    public long CompanyId { get; set; }
+
+    public string CompanyId { get; set; } = null!;
     
     public DateTime CreatedAt { get; set; }
     

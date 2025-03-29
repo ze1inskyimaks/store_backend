@@ -61,6 +61,8 @@ public class ApplicationDbContext : DbContext
         modelBuilder.Entity<Company>(entity =>
         {
             entity.HasKey(e => e.Id);
+            entity.Property(e => e.Id)
+                .ValueGeneratedNever();
         });
     }
 }

@@ -9,7 +9,7 @@ public class Item
     public int StockQuantity { get; set; }
     public Status Status { get; set; } = Status.Available;
     public long? CategoryId { get; set; }
-    public long CompanyId { get; set; }
+    public string CompanyId { get; set; } = null!;
     public DateTime CreatedAt { get; set; } = DateTime.Now;
     public DateTime UpdatedAt { get; set; } = DateTime.Now;
 

@@ -2,6 +2,6 @@
 
 public class Company
 {
-    public long Id { get; set; }
+    public required string Id { get; set; }
     public ICollection<Item>? Items { get; set; }
 }

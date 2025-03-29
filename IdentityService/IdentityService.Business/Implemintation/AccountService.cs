@@ -1,5 +1,6 @@
 ﻿using IdentityService.Business.Interface;
 using IdentityService.Business.Mapping;
+using IdentityService.Business.Models;
 using IdentityService.Business.Models.DTO;
 using IdentityService.Business.RabbitMq;
 using IdentityService.Data.Models;
@@ -41,7 +42,7 @@ public class AccountService : IAccountService
         return await _jwtService.GenerateJwtToken(acc);
     }
 
-    public async Task Register(AccountDTO accountDto)
+    public async Task Register(AccountDTO accountDto, uint role)
     {
         if (await _userManager.FindByEmailAsync(accountDto.Email) != null)
         {
@@ -57,8 +58,22 @@ public class AccountService : IAccountService
                                 string.Join(", ", result.Errors.Select(e => e.Description)));
         }
 
-        await _userManager.AddToRoleAsync(account, "USER");
-        _createdProducer.SendCompanyCreatedMessage(account.Id);
+        switch (role)
+        {
+            case 0:
+            {
+                await _userManager.AddToRoleAsync(account, Role.USER);
+                break;
+            }
+            case 1:
+            {
+                await _userManager.AddToRoleAsync(account, Role.USER);
+                var acc = await _userManager.FindByEmailAsync(accountDto.Email);
+                _createdProducer.SendCompanyCreatedMessage(acc!.Id);
+                break;
+            }
+        }
+        
     }
 
     public async Task AddRoleToAccount(string id, string role)
